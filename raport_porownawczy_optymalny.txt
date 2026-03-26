@@ -1,0 +1,99 @@
+RAPORT Z KLASYFIKACJI - ZOPTYMALIZOWANY (F1-Macro & RobustScaler)
+======================================================================
+
+CZĘŚĆ 1: WYNIKI BEZ ZASTOSOWANIA SMOTE
+----------------------------------------
+
+Model: Logistic Regression
+Najlepsze parametry (wg F1-Macro): {'C': 10, 'solver': 'lbfgs'}
+Accuracy: 0.7333 | F1-Macro: 0.7511
+Raport klasyfikacji:
+              precision    recall  f1-score   support
+
+  horizontal       0.68      0.70      0.69        37
+      normal       0.76      0.76      0.76        50
+    vertical       1.00      0.67      0.80         3
+
+    accuracy                           0.73        90
+   macro avg       0.81      0.71      0.75        90
+weighted avg       0.74      0.73      0.73        90
+
+
+Model: Random Forest
+Najlepsze parametry (wg F1-Macro): {'max_depth': 10, 'n_estimators': 50}
+Accuracy: 0.8222 | F1-Macro: 0.7164
+Raport klasyfikacji:
+              precision    recall  f1-score   support
+
+  horizontal       0.85      0.76      0.80        37
+      normal       0.80      0.90      0.85        50
+    vertical       1.00      0.33      0.50         3
+
+    accuracy                           0.82        90
+   macro avg       0.88      0.66      0.72        90
+weighted avg       0.83      0.82      0.82        90
+
+
+Model: SVC
+Najlepsze parametry (wg F1-Macro): {'C': 1, 'kernel': 'linear'}
+Accuracy: 0.7444 | F1-Macro: 0.6641
+Raport klasyfikacji:
+              precision    recall  f1-score   support
+
+  horizontal       0.71      0.73      0.72        37
+      normal       0.76      0.78      0.77        50
+    vertical       1.00      0.33      0.50         3
+
+    accuracy                           0.74        90
+   macro avg       0.83      0.61      0.66        90
+weighted avg       0.75      0.74      0.74        90
+
+
+======================================================================
+CZĘŚĆ 2: WYNIKI Z ZASTOSOWANIEM OVERSAMPLINGU (SMOTE)
+----------------------------------------
+
+Model: Logistic Regression
+Najlepsze parametry (wg F1-Macro): {'classifier__C': 10, 'classifier__solver': 'lbfgs'}
+Accuracy: 0.7556 | F1-Macro: 0.7532
+Raport klasyfikacji:
+              precision    recall  f1-score   support
+
+  horizontal       0.71      0.78      0.74        37
+      normal       0.82      0.72      0.77        50
+    vertical       0.60      1.00      0.75         3
+
+    accuracy                           0.76        90
+   macro avg       0.71      0.83      0.75        90
+weighted avg       0.77      0.76      0.76        90
+
+
+Model: Random Forest
+Najlepsze parametry (wg F1-Macro): {'classifier__max_depth': 10, 'classifier__n_estimators': 100}
+Accuracy: 0.8333 | F1-Macro: 0.5628
+Raport klasyfikacji:
+              precision    recall  f1-score   support
+
+  horizontal       0.88      0.78      0.83        37
+      normal       0.81      0.92      0.86        50
+    vertical       0.00      0.00      0.00         3
+
+    accuracy                           0.83        90
+   macro avg       0.56      0.57      0.56        90
+weighted avg       0.81      0.83      0.82        90
+
+
+Model: SVC
+Najlepsze parametry (wg F1-Macro): {'classifier__C': 10, 'classifier__kernel': 'linear'}
+Accuracy: 0.7444 | F1-Macro: 0.7181
+Raport klasyfikacji:
+              precision    recall  f1-score   support
+
+  horizontal       0.71      0.73      0.72        37
+      normal       0.78      0.76      0.77        50
+    vertical       0.67      0.67      0.67         3
+
+    accuracy                           0.74        90
+   macro avg       0.72      0.72      0.72        90
+weighted avg       0.75      0.74      0.74        90
+
